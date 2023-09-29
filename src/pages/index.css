@@ -1,0 +1,8 @@
+.grid-parent {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5px;
+}
+.linear{
+    background-image: linear-gradient(to top, black, rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0.0));
+}
