@@ -48,9 +48,13 @@ const Card = ({ movie }: { movie: Movie }) => {
 
     return (
         <Link to = {`/movie/${movieProp.id}`}>
-            <div className="rounded border border-gray-700 relative group hover:scale-[1.10] z-1 hover:z-[5] transition ease-in-out duration-300 hover:shadow-md">
+            <div className="rounded border border-gray-700 relative group z-1 hover:z-[5] transition ease-in-out duration-300 hover:shadow-md">
                 <div className="w-full h-full">
-                    <img src={`https://image.tmdb.org/t/p/w500${movieProp?.poster_path}`} className="w-full h-full" alt="" loading="lazy" />
+                    { movieProp.poster_path == null ? (
+                        <img src="/placeholder-img.png" className="w-full h-[320px]" alt="" loading="lazy" />
+                    ) : (
+                        <img src={`https://image.tmdb.org/t/p/w500${movieProp?.poster_path}`} className="w-full h-[320px]" alt="" loading="lazy" />
+                    ) }
                 </div>
                 <div className="absolute top-0 left-0 w-full h-full bg-black/20 opacity-100 group-hover:opacity-20 transition ease-in-out duration-300"></div>
                 <div className="absolute bottom-0 left-0 text-white text-sm p-2 leading-tight linear w-full">
@@ -74,7 +78,7 @@ const Card = ({ movie }: { movie: Movie }) => {
                             ))}
                         </ul>
                     </div>
-                    <p className="text-slate-300 hidden group-hover:block text-[12px]">{movieProp.overview?.substr(0, 100)}...</p>
+                    <p className="text-slate-300 text-[12px]">{movieProp.overview?.substr(0, 50)}...</p>
                 </div>
             </div>
         </Link>

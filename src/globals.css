@@ -2,12 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background-color: black;
+.grid-parent {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5px;
 }
+@media only screen and (max-width:500px) {
+    .grid-parent{
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    }
+}
+/* .grid-parent:nth-child(-n+4) {
+    grid-template-columns: 1fr;
+    width: 300px;
+} */
