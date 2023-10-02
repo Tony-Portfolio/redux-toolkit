@@ -60,7 +60,7 @@ const Navigation = () => {
                         </svg>
                     </div>
                 </ul>
-                <div className="relative flex items-center ml-4">
+                <div className="relative flex items-center">
                     <form action="" onSubmit={(event: any) => {event.preventDefault();window.location.href = `/movie/search/${query}`}}>
                         <input
                             type="text"
